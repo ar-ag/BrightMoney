@@ -160,7 +160,7 @@ const Home = () => {
                             <tr
                                 key={bill._id}
                                 className={`bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600 ${
-                                    selectedBills.includes(bill.id) ? 'bg-red-200' : ''
+                                    selectedBills.includes(bill.id) ? 'bg-blue-200' : ''
                                 }`}
                             >
                                 <td className="px-6 py-4">{bill.description}</td>
