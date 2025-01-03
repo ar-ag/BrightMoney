@@ -38,28 +38,28 @@ const deleteBill = async(billId) => {
 }
 
 const updateBill = async(updatedBill) => {
-    // Retrieve data from localStorage
-  const jsonData = localStorage.getItem('billings');
-  let data = [];
+    
+    const jsonData = localStorage.getItem('billings');
+    let data = [];
 
-  // Parse the JSON data if it exists
-  if (jsonData !== undefined && jsonData !== null) {
-    data = JSON.parse(jsonData);
-  }
+    
+    if (jsonData !== undefined && jsonData !== null) {
+        data = JSON.parse(jsonData);
+    }
 
-  // Filter out the bill with the same ID as the updated bill
-  const filteredData = data.filter(function (bill) {
-    return bill.id !== updatedBill.id;
-  });
+    
+    const filteredData = data.filter(function (bill) {
+        return bill.id !== updatedBill.id;
+    });
 
-  // Add the updated bill back to the data
-  const newData = [...filteredData, updatedBill];
+    
+    const newData = [...filteredData, updatedBill];
 
-  // Save the updated data back to localStorage
-  localStorage.setItem('billings', JSON.stringify(newData));
+    
+    localStorage.setItem('billings', JSON.stringify(newData));
 
-  // Return the new list of bills
-  return newData;
+    
+    return newData;
 
 }
 
